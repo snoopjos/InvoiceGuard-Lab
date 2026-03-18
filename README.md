@@ -76,8 +76,9 @@ They receive a single URL. No Azure account. No server access.
  
 ---
  
-### Step 2 — Confirm Your VNet and Subnet
-- Confirm your existing **VNet** and billing **subnet** are in place from the previous lab
+### Step 2 — Create a Virtual Network and Subnet
+- Create a new **VNet** inside the resource group named **`vnet-billing`**
+- Add a subnet named **`snet-billing`** — this is where the Billing Server VM will live
 - Note the subnet address range — you will need it when configuring the Storage Firewall
  
 ---
