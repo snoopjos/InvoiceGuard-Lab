@@ -46,7 +46,7 @@ This is where all PDF invoices will live. Public access is fully disabled.
 ### Lifecycle Management
 
 Rather than manually managing storage costs, we configure a Lifecycle Management Rule.
-Any blob untouched for **30 days** is automatically moved to the **Cool tier**, reducing costs for older invoices without any manual effort. As Auditers will need access from time to time we do not want to place it in Cold tier as this is the most expensive to access.
+Any blob untouched for **90 days** is automatically moved to the **Cold tier**, reducing costs for older invoices without any manual effort. As Auditers will need access from time to time we do not want to place it in Cold tier immediately as this is the most expensive to access.
 
 ### Storage Firewall
 
@@ -94,7 +94,7 @@ They receive a single URL. No Azure account. No server access.
  
 ### Step 4 — Create a Storage Account
 - Create a new **Storage Account** inside the resource group
-- Set redundancy to **LRS**
+- Set redundancy to **ZRS**
 - Under Data Protection, enable **Blob Soft Delete** → 7-day retention
 - Ensure public blob access is **disabled**
  
@@ -108,7 +108,7 @@ They receive a single URL. No Azure account. No server access.
  
 ### Step 6 — Configure a Lifecycle Management Rule
 - Add a new **Lifecycle Management Rule**
-- Set action: move blobs to **Cool tier** after **30 days** of last modification
+- Set action: move blobs to **Cold tier** after **90 days** of last modification
  
 ---
  
@@ -129,7 +129,9 @@ They receive a single URL. No Azure account. No server access.
 ### Step 9 — Generate a SAS Token for Auditors
 - Go to **Shared Access Signature** on the Storage Account
 - Set permissions to **Read only**
-- Restrict to the auditor's **known external IP range**
+- Restrict to the auditor's **known external IP range** — for this lab, enter your own public IP e.g. **`x.x.x.x`**
+  - Find your public IP by visiting **whatismyip.com**
+  - For a range in production, use CIDR notation e.g. `x.x.x.x/24` for the auditor firm's office IP range
 - Set an appropriate **expiry date**
 - Generate and share only the **Blob SAS URL** — no Azure credentials required
  
