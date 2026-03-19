@@ -146,5 +146,5 @@ They receive a single URL. No Azure account. No server access.
  
 ### Step 11 — Simulate Invoice Administration
 - Authenticate AzCopy using **`azcopy login`**
-- Upload test ffile to the **`invoices`** container
+- Upload test file to the **`invoices`** container
 - Verify the files appear in the Azure Portal under your container
