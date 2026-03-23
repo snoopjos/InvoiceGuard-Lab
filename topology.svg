@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" font-family="Segoe UI, Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="900" height="580" fill="#0d1117" rx="12"/>
+
+  <!-- Title -->
+  <text x="450" y="38" text-anchor="middle" font-size="16" font-weight="bold" fill="#e6edf3">InvoiceGuard-Lab — Azure Topology</text>
+
+  <!-- ── LEFT: VNet box ── -->
+  <rect x="40" y="60" width="340" height="340" rx="10" fill="none" stroke="#1f6feb" stroke-width="2" stroke-dasharray="8,4"/>
+  <text x="60" y="82" font-size="12" fill="#1f6feb" font-weight="bold">VNet  —  vnet-billing</text>
+
+  <!-- Subnet box inside VNet -->
+  <rect x="65" y="95" width="290" height="200" rx="8" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="82" y="113" font-size="11" fill="#388bfd">Subnet  —  snet-billing</text>
+
+  <!-- Billing VM -->
+  <rect x="120" y="125" width="180" height="140" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <!-- VM icon -->
+  <rect x="148" y="140" width="52" height="40" rx="4" fill="#1f6feb" opacity="0.8"/>
+  <rect x="156" y="148" width="36" height="24" rx="2" fill="#0d1117"/>
+  <rect x="162" y="188" width="24" height="6" rx="2" fill="#1f6feb" opacity="0.6"/>
+  <text x="210" y="155" font-size="11" fill="#e6edf3" font-weight="bold">Billing</text>
+  <text x="210" y="169" font-size="11" fill="#e6edf3" font-weight="bold">Server VM</text>
+  <!-- Bastion badge -->
+  <rect x="128" y="215" width="68" height="20" rx="4" fill="#1a3a1a" stroke="#3fb950" stroke-width="1"/>
+  <text x="162" y="228" text-anchor="middle" font-size="9" fill="#3fb950">⚓ Bastion</text>
+  <!-- AzCopy badge -->
+  <rect x="204" y="215" width="68" height="20" rx="4" fill="#1a2a3a" stroke="#388bfd" stroke-width="1"/>
+  <text x="238" y="228" text-anchor="middle" font-size="9" fill="#388bfd">AzCopy</text>
+
+  <!-- Storage Explorer label at top of VNet -->
+  <rect x="65" y="308" width="290" height="76" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="210" y="328" text-anchor="middle" font-size="11" fill="#8b949e">Managed via</text>
+  <text x="210" y="346" text-anchor="middle" font-size="12" font-weight="bold" fill="#e6edf3">Azure Storage Explorer</text>
+  <text x="210" y="364" text-anchor="middle" font-size="10" fill="#8b949e">Local machine / VM</text>
+
+  <!-- Service Endpoint label -->
+  <text x="210" y="420" text-anchor="middle" font-size="10" fill="#d29922">⚡ Service Endpoint (Microsoft.Storage)</text>
+
+  <!-- ── MIDDLE: Arrow VM → Blob ── -->
+  <!-- PDF arrow -->
+  <line x1="395" y1="210" x2="490" y2="210" stroke="#e6edf3" stroke-width="2" marker-end="url(#arrowWhite)"/>
+  <text x="442" y="200" text-anchor="middle" font-size="10" fill="#8b949e">PDF</text>
+
+  <!-- Storage Explorer arrow (curved, bottom) -->
+  <path d="M380 346 Q430 420 490 346" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowBlue)"/>
+  <text x="435" y="410" text-anchor="middle" font-size="9" fill="#388bfd">manage</text>
+
+  <!-- ── RIGHT: Storage Account box ── -->
+  <rect x="490" y="60" width="360" height="340" rx="10" fill="none" stroke="#d29922" stroke-width="2" stroke-dasharray="8,4"/>
+  <text x="510" y="82" font-size="12" fill="#d29922" font-weight="bold">Storage Account  —  LRS</text>
+
+  <!-- Blob Container -->
+  <rect x="520" y="100" width="300" height="160" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <!-- Blob icon -->
+  <ellipse cx="580" cy="145" rx="28" ry="18" fill="#d29922" opacity="0.2" stroke="#d29922" stroke-width="1.5"/>
+  <ellipse cx="580" cy="145" rx="18" ry="10" fill="#d29922" opacity="0.4"/>
+  <text x="620" y="138" font-size="13" font-weight="bold" fill="#e6edf3">Blob Container</text>
+  <text x="620" y="153" font-size="10" fill="#8b949e">invoices  |  Private</text>
+  <!-- Feature badges -->
+  <rect x="528" y="175" width="76" height="18" rx="4" fill="#1a2a1a" stroke="#3fb950" stroke-width="1"/>
+  <text x="566" y="187" text-anchor="middle" font-size="9" fill="#3fb950">Soft Delete 7d</text>
+  <rect x="612" y="175" width="68" height="18" rx="4" fill="#1a1a2a" stroke="#388bfd" stroke-width="1"/>
+  <text x="646" y="187" text-anchor="middle" font-size="9" fill="#388bfd">Lifecycle 30d</text>
+  <rect x="688" y="175" width="56" height="18" rx="4" fill="#2a1a1a" stroke="#f85149" stroke-width="1"/>
+  <text x="716" y="187" text-anchor="middle" font-size="9" fill="#f85149">Firewall</text>
+  <!-- RBAC + Endpoint -->
+  <rect x="528" y="201" width="44" height="18" rx="4" fill="#1a1a2a" stroke="#a371f7" stroke-width="1"/>
+  <text x="550" y="213" text-anchor="middle" font-size="9" fill="#a371f7">RBAC</text>
+  <rect x="580" y="201" width="108" height="18" rx="4" fill="#1a2a1a" stroke="#3fb950" stroke-width="1"/>
+  <text x="634" y="213" text-anchor="middle" font-size="9" fill="#3fb950">Private Endpoint</text>
+
+  <!-- ── AUDITORS box ── -->
+  <rect x="560" y="310" width="240" height="80" rx="8" fill="#161b22" stroke="#f85149" stroke-width="1.5"/>
+  <!-- Auditor icon -->
+  <rect x="575" y="322" width="30" height="36" rx="3" fill="#f85149" opacity="0.15" stroke="#f85149" stroke-width="1"/>
+  <text x="582" y="336" font-size="10" fill="#f85149">📋</text>
+  <text x="615" y="333" font-size="12" font-weight="bold" fill="#e6edf3">Auditors</text>
+  <text x="615" y="349" font-size="10" fill="#8b949e">SAS Token — Read-only</text>
+  <text x="615" y="364" font-size="10" fill="#f85149">IP Restricted  x.x.x.x</text>
+  <text x="615" y="379" font-size="9" fill="#8b949e">HTTPS only · Time-limited</text>
+
+  <!-- Auditor → Blob arrow -->
+  <line x1="670" y1="308" x2="670" y2="264" stroke="#f85149" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowRed)"/>
+  <text x="698" y="290" font-size="9" fill="#f85149">SAS URL</text>
+
+  <!-- ── LEGEND ── -->
+  <rect x="40" y="460" width="820" height="100" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="60" y="480" font-size="11" font-weight="bold" fill="#8b949e">LEGEND</text>
+  <!-- items -->
+  <line x1="60" y1="500" x2="100" y2="500" stroke="#e6edf3" stroke-width="2" marker-end="url(#arrowWhite)"/>
+  <text x="108" y="504" font-size="10" fill="#8b949e">PDF upload (AzCopy)</text>
+  <line x1="240" y1="500" x2="280" y2="500" stroke="#388bfd" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowBlue)"/>
+  <text x="288" y="504" font-size="10" fill="#8b949e">Management (Storage Explorer)</text>
+  <line x1="480" y1="500" x2="520" y2="500" stroke="#f85149" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowRed)"/>
+  <text x="528" y="504" font-size="10" fill="#8b949e">Auditor access (SAS Token)</text>
+
+  <rect x="60" y="518" width="10" height="10" rx="2" fill="none" stroke="#1f6feb" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="78" y="528" font-size="10" fill="#8b949e">VNet boundary</text>
+  <rect x="180" y="518" width="10" height="10" rx="2" fill="none" stroke="#d29922" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="198" y="528" font-size="10" fill="#8b949e">Storage Account boundary</text>
+  <rect x="370" y="518" width="10" height="10" rx="2" fill="#3fb950" opacity="0.3" stroke="#3fb950" stroke-width="1"/>
+  <text x="388" y="528" font-size="10" fill="#8b949e">Security / compliance feature</text>
+  <rect x="570" y="518" width="10" height="10" rx="2" fill="#a371f7" opacity="0.3" stroke="#a371f7" stroke-width="1"/>
+  <text x="588" y="528" font-size="10" fill="#8b949e">RBAC / identity</text>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowWhite" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#e6edf3"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#388bfd"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#f85149"/>
+    </marker>
+  </defs>
+
+</svg>

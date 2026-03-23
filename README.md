@@ -25,6 +25,7 @@ The goal is to move invoice storage to a **dedicated, secure and cost-effective 
 Deploy a minimal but secure Azure Blob Storage environment that offloads invoice storage from the VM, enforces lifecycle-based cost management, restricts auditor access to scoped read-only tokens, and protects the storage account behind a network firewall.
 
 ---
+  ![Topology](topology.svg)
 
 ## 🧠 Thought Process
 
